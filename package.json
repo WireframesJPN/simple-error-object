@@ -2,10 +2,11 @@
   "name": "simple-error-object",
   "version": "0.5.0",
   "description": "Really Simple Error Object.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --compilers js:babel-register spec.js",
-    "build": "babel ./src/index.js --out-file index.js"
+    "test": "NODE_ENV=test mocha --compilers js:babel-register src/**/*.spec.js",
+    "build": "babel src --out-dir lib --ignore *.spec.js",
+    "prepare": "npm run build"
   },
   "keywords": [
     "error"
